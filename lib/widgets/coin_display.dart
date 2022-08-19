@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../blocs/coin_price_bloc.dart';
 import '../model/coin.dart';
 import '../pages/coin_page.dart';
 import '../services/coin_repository.dart';
@@ -36,10 +38,14 @@ class _CoinDisplayState extends State<CoinDisplay> {
                 children: coins
                     .map((coin) => GestureDetector(
                         onTap: () {
+// coin_display.dart
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (_) => CoinPage(coin: coin)));
+                                  builder: (_) => BlocProvider(
+                                      create: (context) => CoinPriceBloc()
+                                        ..add(Start(coin.price)),
+                                      child: CoinPage(coin: coin))));
                         },
                         child: CoinCard(coin: coin)))
                     .toList(),
