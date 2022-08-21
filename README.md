@@ -6,9 +6,7 @@ What I learned:
 <div> REST APIs </div>
 <div> Display Graph Data  </div>
 <div> FutureBuilders  </div>
-<div> Simple state management without packages </div>
 <div> Bloc </div>
-<div> Widget architecture </div>
 <div>Took a design and turned it into code </div>
 
 ## Screenshots
